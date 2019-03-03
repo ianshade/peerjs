@@ -273,6 +273,9 @@ Peer.prototype._handleMessage = function(message) {
       }
 
       break;
+    case "DATA":
+      this.emit("data", payload);
+      break;
     default:
       if (!payload) {
         util.warn(
